@@ -17,8 +17,8 @@
 	"Modules": [
 		{
 			"Name": "NameValidation",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"Type": "Editor",
+			"LoadingPhase": "PreLoadingScreen"
 		}
 	],
 	"Plugins": [
