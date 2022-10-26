@@ -17,4 +17,4 @@ Click on ``Edit->Project Settings`` and then under the section ``Game`` click on
 When you have filled in the validation tests in the settings, go to the asset(s) you want to validate and select them. After you selected them right click them and click on ``Asset Actions->Validate Assets``. This should open a window with the results.
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/)
