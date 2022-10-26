@@ -16,10 +16,10 @@ struct FValidationInfo
 {
 	GENERATED_BODY()
 
-	UPROPERTY(Config, EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "General")
 	TSubclassOf<UObject> AssetType;
 
-	UPROPERTY(Config, EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "General")
 	FString ExpectedPrefix;
 };
 
