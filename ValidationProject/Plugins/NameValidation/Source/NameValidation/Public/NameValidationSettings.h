@@ -18,7 +18,7 @@ struct FValidationInfo
 	FString ExpectedPrefix;
 
 	UPROPERTY(Config, EditAnywhere, BlueprintReadOnly)
-	bool MoveFileType;
+	bool MoveFileType = true;
 
 	UPROPERTY(Config, EditAnywhere, BlueprintReadOnly)
 	FString PathToMoveFileTo;

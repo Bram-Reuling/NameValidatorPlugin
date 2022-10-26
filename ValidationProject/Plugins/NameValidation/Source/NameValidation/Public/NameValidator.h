@@ -18,6 +18,4 @@ class NAMEVALIDATION_API UNameValidator : public UEditorValidatorBase
 public:
 	virtual bool CanValidateAsset_Implementation(UObject* InAsset) const override;
 	virtual EDataValidationResult ValidateLoadedAsset_Implementation(UObject* InAsset, TArray<FText>& ValidationErrors) override;
-
-	void MoveFile(FValidationInfo& ValidationInfo);
 };

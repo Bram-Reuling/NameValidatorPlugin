@@ -15,18 +15,14 @@ bool UNameValidator::CanValidateAsset_Implementation(UObject* InAsset) const
 	if (ValidationSettings->Validators.IsEmpty()) return false;
 	
 	// Loop over the validator list that we got from the settings.
-	for (auto ValidationInfo : ValidationSettings->Validators)
+	for (const auto ValidationInfo : ValidationSettings->Validators)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Class: %s"), *InAsset->GetClass()->GetName());
-		UE_LOG(LogTemp, Warning, TEXT("Other Class: %s"), *ValidationInfo.AssetType->GetName());
-
 		FString AssetClassName = InAsset->GetClass()->GetName();
 		FString ValidationClassName = ValidationInfo.AssetType->GetName();
 		
 		// If the type of object was specified in the object, return true.
 		if (AssetClassName == ValidationClassName)
 		{
-			UE_LOG(LogTemp, Warning, TEXT("Same Name!"));
 			return true;
 		}
 	}
@@ -41,12 +37,8 @@ EDataValidationResult UNameValidator::ValidateLoadedAsset_Implementation(UObject
 	const UNameValidationSettings* ValidationSettings = GetDefault<UNameValidationSettings>();
 	
 	// Loop over the validator list that we got from the settings.
-	for (auto ValidationInfo : ValidationSettings->Validators)
+	for (const auto ValidationInfo : ValidationSettings->Validators)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Class: %s"), *InAsset->GetClass()->GetName());
-		UE_LOG(LogTemp, Warning, TEXT("Other Class: %s"), *ValidationInfo.AssetType->GetName());
-		UE_LOG(LogTemp, Warning, TEXT("Asset Path: %s"), *InAsset->GetPathName());
-
 		FString AssetClassName = InAsset->GetClass()->GetName();
 		FString ValidationClassName = ValidationInfo.AssetType->GetName();
 
@@ -56,7 +48,6 @@ EDataValidationResult UNameValidator::ValidateLoadedAsset_Implementation(UObject
 			if (InAsset->GetName().StartsWith(ValidationInfo.ExpectedPrefix))
 			{
 				AssetPasses(InAsset);
-				MoveFile(ValidationInfo);
 				return EDataValidationResult::Valid;
 			}
 			else
@@ -69,11 +60,4 @@ EDataValidationResult UNameValidator::ValidateLoadedAsset_Implementation(UObject
 
 	AssetWarning(InAsset, FText::FromString("Cannot check asset because validator list is empty"));
 	return EDataValidationResult::NotValidated;
-}
-
-void UNameValidator::MoveFile(FValidationInfo& ValidationInfo)
-{
-	if (ValidationInfo.MoveFileType)
-	{
-	}
 }
