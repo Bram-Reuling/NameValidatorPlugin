@@ -1,8 +1,8 @@
 {
 	"FileVersion": 3,
 	"Version": 1,
-	"VersionName": "1.0",
-	"FriendlyName": "NameValidation",
+	"VersionName": "1.0.0",
+	"FriendlyName": "Name Validation",
 	"Description": "Validation plugin for asset names.",
 	"Category": "Utilities",
 	"CreatedBy": "Bram Reuling",
@@ -11,7 +11,7 @@
 	"MarketplaceURL": "",
 	"SupportURL": "",
 	"CanContainContent": true,
-	"IsBetaVersion": true,
+	"IsBetaVersion": false,
 	"IsExperimentalVersion": false,
 	"Installed": false,
 	"Modules": [

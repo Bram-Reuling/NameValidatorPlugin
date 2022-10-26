@@ -1,4 +1,9 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+/**
+ * NameValidationSettings.h
+ * @author Bram Reuling
+ * @date 25/10/2022
+ * @brief Base class for the plugin settings.
+ */
 
 #pragma once
 
@@ -16,12 +21,6 @@ struct FValidationInfo
 
 	UPROPERTY(Config, EditAnywhere, BlueprintReadOnly)
 	FString ExpectedPrefix;
-
-	UPROPERTY(Config, EditAnywhere, BlueprintReadOnly)
-	bool MoveFileType = true;
-
-	UPROPERTY(Config, EditAnywhere, BlueprintReadOnly)
-	FString PathToMoveFileTo;
 };
 
 /**

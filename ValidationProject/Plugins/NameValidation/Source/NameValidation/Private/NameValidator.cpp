@@ -1,10 +1,16 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+/**
+ * NameValidator.cpp
+ * @author Bram Reuling
+ * @date 25/10/2022
+ * @brief Base validator class. Will read data from settings file and will do validation based on that.
+ */
 
 
 #include "NameValidator.h"
 
 #include "NameValidationSettings.h"
 
+// TODO: Clean this class up.
 
 bool UNameValidator::CanValidateAsset_Implementation(UObject* InAsset) const
 {
@@ -17,10 +23,11 @@ bool UNameValidator::CanValidateAsset_Implementation(UObject* InAsset) const
 	// Loop over the validator list that we got from the settings.
 	for (const auto ValidationInfo : ValidationSettings->Validators)
 	{
+		// Get the names of the asset class and the validation class.
 		FString AssetClassName = InAsset->GetClass()->GetName();
 		FString ValidationClassName = ValidationInfo.AssetType->GetName();
 		
-		// If the type of object was specified in the object, return true.
+		// If the asset class and the validation class names are the same, return true.
 		if (AssetClassName == ValidationClassName)
 		{
 			return true;
@@ -39,10 +46,11 @@ EDataValidationResult UNameValidator::ValidateLoadedAsset_Implementation(UObject
 	// Loop over the validator list that we got from the settings.
 	for (const auto ValidationInfo : ValidationSettings->Validators)
 	{
+		// Get the names of the asset class and the validation class.
 		FString AssetClassName = InAsset->GetClass()->GetName();
 		FString ValidationClassName = ValidationInfo.AssetType->GetName();
 
-		// If the type of object was specified in the object, return true.
+		// If the asset class and the validation class names are the same, do the validation checks.
 		if (AssetClassName == ValidationClassName)
 		{
 			if (InAsset->GetName().StartsWith(ValidationInfo.ExpectedPrefix))

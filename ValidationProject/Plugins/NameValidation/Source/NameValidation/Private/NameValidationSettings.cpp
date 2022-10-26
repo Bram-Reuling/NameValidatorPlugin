@@ -1,8 +1,11 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+/**
+ * NameValidationSettings.cpp
+ * @author Bram Reuling
+ * @date 25/10/2022
+ * @brief Base class for the plugin settings.
+ */
 
 
 #include "NameValidationSettings.h"
 
-UNameValidationSettings::UNameValidationSettings()
-{
-}
+UNameValidationSettings::UNameValidationSettings() = default;

@@ -1,10 +1,14 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+/**
+ * NameValidator.h
+ * @author Bram Reuling
+ * @date 25/10/2022
+ * @brief Base validator class. Will read data from settings file and will do validation based on that.
+ */
 
 #pragma once
 
 #include "CoreMinimal.h"
 #include "EditorValidatorBase.h"
-#include "NameValidationSettings.h"
 #include "NameValidator.generated.h"
 
 /**
